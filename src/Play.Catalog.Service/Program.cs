@@ -16,7 +16,7 @@ var mongoDbSettings = builder.Configuration.GetSection("MongoDbSettings").Get<Mo
 
 // Add services to the container.
 
-builder.Services.AddMongoDb();
+builder.Services.AddMongoDb().AddMongoRepository();
 builder.Services.AddControllers(option =>
 {
     option.SuppressAsyncSuffixInActionNames = false;

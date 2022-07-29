@@ -24,14 +24,13 @@ namespace Play.Catalog.Service.Repositories
                 var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
                 return mongoClient.GetDatabase(serviceSettings.ServiceName);
             });
-
-            services.AddSingleton<IRepository<Item>>(ServiceProvider =>
-            {
-                var mongoDB = ServiceProvider.GetService<IMongoDatabase>();
-                return new MongoRepository<Item>(mongoDB, "items");
-            });
             return services;
+        }
 
+        public static IServiceCollection AddMongoRepository(this IServiceCollection services)
+        {
+            services.AddScoped(typeof(IRepository<>), typeof(MongoRepository<>));
+            return services;
         }
     }
 }

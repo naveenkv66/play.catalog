@@ -11,10 +11,10 @@ namespace Play.Catalog.Service.Repositories
         private readonly IMongoCollection<T> dbCollection;
         private readonly FilterDefinitionBuilder<T> filterDefinitionBuilder = Builders<T>.Filter;
 
-        public MongoRepository(IMongoDatabase mongoDatabase, string collectionName)
+        public MongoRepository(IMongoDatabase mongoDatabase)
         {
             _mongoDatabase = mongoDatabase;
-            dbCollection = _mongoDatabase.GetCollection<T>(collectionName);
+            dbCollection = _mongoDatabase.GetCollection<T>(typeof(T).Name);
         }
 
 
