@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Repositories;
+using Play.Common;
 using System.Collections.Generic;
+
 namespace Play.Catalog.Service.Controllers
 {
     [ApiController]
@@ -22,9 +23,9 @@ namespace Play.Catalog.Service.Controllers
             return (await _repository.GetAllAsync()).AsListDTO();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<ItemDto>> GetByIdAsync(Guid id)
+        public async Task<ActionResult<ItemDto>> GetAsync(Guid id)
         {
-            var item = await _repository.GetByIdAsync(id);
+            var item = await _repository.GetAsync(id);
             if (item == null)
             {
                 return NotFound();
@@ -37,7 +38,7 @@ namespace Play.Catalog.Service.Controllers
         {
             ItemDto item = new(Guid.NewGuid(), itemDto.Name, itemDto.Description, itemDto.price, DateTimeOffset.UtcNow);
             await _repository.CreateAsync(item.AsEntity());
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(GetAsync), new { id = item.Id }, item);
         }
 
         [HttpPut]
@@ -45,7 +46,7 @@ namespace Play.Catalog.Service.Controllers
         {
 
 
-            var existingItem = (await _repository.GetByIdAsync(Id));
+            var existingItem = (await _repository.GetAsync(Id));
 
             if (existingItem == null)
             {
@@ -62,7 +63,7 @@ namespace Play.Catalog.Service.Controllers
         [HttpDelete]
         public async Task<ActionResult<ItemDto>> Delete(Guid id)
         {
-            var existingItem = (await _repository.GetByIdAsync(id));
+            var existingItem = (await _repository.GetAsync(id));
 
             if (existingItem == null)
             {

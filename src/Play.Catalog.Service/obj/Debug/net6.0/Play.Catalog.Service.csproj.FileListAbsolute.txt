@@ -41,3 +41,5 @@ C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Ser
 C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Service\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Service\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Service\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Service\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Personal\MyStuff\MicroServices\JulioYoutube\play.catalog\src\Play.Catalog.Service\bin\Debug\net6.0\Play.Common.dll

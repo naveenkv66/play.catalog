@@ -21,6 +21,8 @@
           "net6.0"
         ],
         "sources": {
+          "C:\\Personal\\MyStuff\\MicroServices\\JulioYoutube\\MyPackages": {},
+          "C:\\Personal\\MyStuff\\MicroServices\\JulioYoutube\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -40,9 +42,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "MongoDB.Driver": {
+            "Play.common": {
               "target": "Package",
-              "version": "[2.17.0, )"
+              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
